@@ -57,6 +57,12 @@ stages:
         projects: '**/WebApp.csproj'
         arguments: '--configuration $(BuildConfiguration)'
 
+    - task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '6.0.x' # Change to the desired .NET version
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+
     - task: DotNetCoreCLI@2
       displayName: Test
       inputs:
