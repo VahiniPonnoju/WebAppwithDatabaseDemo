@@ -1,21 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-<<<<<<< HEAD
     <TargetFramework>netcoreapp2.0</TargetFramework>
-=======
-    <TargetFramework>net6.0</TargetFramework>
->>>>>>> a368dc28fd4648d4fe0a03e83471c51a035a35a9
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
-=======
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.1" />
->>>>>>> a368dc28fd4648d4fe0a03e83471c51a035a35a9
     <PackageReference Include="MSTest.TestAdapter" Version="1.2.1" />
     <PackageReference Include="MSTest.TestFramework" Version="1.2.1" />
   </ItemGroup>
