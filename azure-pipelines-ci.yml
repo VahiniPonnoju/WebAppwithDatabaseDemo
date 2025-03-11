@@ -15,11 +15,20 @@ jobs:
     inputs:
       command: restore
       projects: '**/WebApp.csproj'
-  - task: UseDotNet@2
+  - task: DotNetCoreCLI@2
+  displayName: "Install dotnet format"
   inputs:
-    packageType: 'sdk'
-    version: '6.x'
-    installationPath: $(Agent.ToolsDirectory)/dotnet
+    command: 'custom'
+    projects: '**/*.csproj'
+    custom: 'tool'
+    arguments: 'update -g dotnet-format'
+ - task: DotNetCoreCLI@2
+  displayName: "Lint dotnet"
+  inputs:
+    command: 'custom'
+    projects: '**/*.csproj'
+    custom: 'format'
+    arguments: '--verify-no-changes --verbosity diagnostic'
   - powershell: |
      Write-Host "Hello World"
      
