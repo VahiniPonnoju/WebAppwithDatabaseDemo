@@ -1,26 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
-    version: '6.0.x'
-    installationPath: $(Agent.ToolsDirectory)/dotnet
-- task: DotNetCoreCLI@2
-  displayName: "Install dotnet format"
-  inputs:
-    command: 'custom'
-    projects: '**/*.csproj'
-    custom: 'tool'
-    arguments: 'update -g dotnet-format'
-- task: DotNetCoreCLI@2
-  displayName: "Lint dotnet"
-  inputs:
-    command: 'custom'
-    projects: '**/*.csproj'
-    custom: 'format'
-    arguments: '--verify-no-changes --verbosity diagnostic'
 
   <PropertyGroup>
-<<<<<<< HEAD
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
@@ -31,17 +11,4 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
-=======
-    <TargetFramework>net6.0</TargetFramework>
-  </PropertyGroup>
-
-  <ItemGroup>
-  <FrameworkReference Include="Microsoft.AspNetCore.App" />
-</ItemGroup>
-
-  <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="9.0.0" />
->>>>>>> a368dc28fd4648d4fe0a03e83471c51a035a35a9
   </ItemGroup>
-
-</Project>
