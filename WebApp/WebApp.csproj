@@ -6,14 +6,8 @@
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
-  <ItemGroup>
-       <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.3" />
-  </ItemGroup>
+ 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="5.0.12" />
   </ItemGroup>
-
-  <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="3.0.4" />
-  </ItemGroup>
-</Project>
+  </Project>
