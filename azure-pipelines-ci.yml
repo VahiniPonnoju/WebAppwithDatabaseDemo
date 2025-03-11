@@ -16,19 +16,19 @@ jobs:
       command: restore
       projects: '**/WebApp.csproj'
   - task: DotNetCoreCLI@2
-  displayName: "Install dotnet format"
-  inputs:
-    command: 'custom'
-    projects: '**/*.csproj'
-    custom: 'tool'
-    arguments: 'update -g dotnet-format'
- - task: DotNetCoreCLI@2
-  displayName: "Lint dotnet"
-  inputs:
-    command: 'custom'
-    projects: '**/*.csproj'
-    custom: 'format'
-    arguments: '--verify-no-changes --verbosity diagnostic'
+    displayName: "Install dotnet format"
+    inputs:
+      command: 'custom'
+      projects: '**/*.csproj'
+      custom: 'tool'
+      arguments: 'update -g dotnet-format'
+  - task: DotNetCoreCLI@2
+    displayName: "Lint dotnet"
+    inputs:
+      command: 'custom'
+      projects: '**/*.csproj'
+      custom: 'format'
+      arguments: '--verify-no-changes --verbosity diagnostic'
   - powershell: |
      Write-Host "Hello World"
      
