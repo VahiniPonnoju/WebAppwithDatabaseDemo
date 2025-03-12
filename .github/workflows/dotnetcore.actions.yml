@@ -1,17 +1,40 @@
-name: .NET Core
+name: .NET Core CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    
     steps:
-    - uses: actions/checkout@v1
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 2.2.108
-    - name: Build with dotnet
+        dotnet-version: '7.x'  # Adjust for the version you want to use
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build the project
       run: dotnet build --configuration Release
+
+    - name: Run unit tests
+      run: dotnet test --configuration Release --no-build --verbosity normal
+
+    - name: Publish project
+      run: dotnet publish --configuration Release --output ./publish
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: published-app
+        path: ./publish
