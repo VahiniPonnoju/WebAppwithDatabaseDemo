@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: '7.x'  # Adjust for the version you want to use
 
-    - name: Restore dependencies
-      run: dotnet restore
+    - name: Restore NuGet packages
+      run: dotnet restore WebAppWithDatabase.sln
 
     - name: Build the project
       run: dotnet build --configuration Release
