@@ -14,12 +14,12 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '7.x'  # Adjust for the version you want to use
+        dotnet-version: '9.x'  # Adjust for the version you want to use
 
     - name: Restore dependencies
       run: dotnet restore
