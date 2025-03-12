@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     
     steps:
     - name: Checkout code
@@ -19,7 +19,7 @@ jobs:
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '9.x'  # Adjust for the version you want to use
+        dotnet-version: '7.x'  # Adjust for the version you want to use
 
     - name: Restore dependencies
       run: dotnet restore
