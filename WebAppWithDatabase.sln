@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{C253631B-C568-4219-AE1B-0F8FEDCFA39B}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WebApp.Database", "WebApp.Database\WebApp.Database.sqlproj", "{E329DEAF-3824-438D-92E3-912519D79930}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp.UnitTest", "WebApp.UnitTest\WebApp.UnitTest.csproj", "{DD134753-D2C9-4805-B4F5-FC26BDDBB496}"
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AzureResourceGroupDeployment", "AzureResourceGroupDeployment\AzureResourceGroupDeployment.deployproj", "{BFCF79CD-CFBD-4E44-A79F-B5C0E95F0F49}"
