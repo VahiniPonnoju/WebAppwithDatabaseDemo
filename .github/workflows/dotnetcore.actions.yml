@@ -20,9 +20,11 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '7.x'  # Adjust for the version you want to use
+    - name: Clear NuGet cache
+      run: dotnet nuget locals all --clear
 
-    - name: Restore dependencies
-      run: dotnet restore
+    - name: Restore NuGet packages
+      run: dotnet restore WebAppWithDatabase.sln
 
     - name: Build the project
       run: dotnet build --configuration Release
