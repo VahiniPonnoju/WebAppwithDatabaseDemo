@@ -2,7 +2,6 @@
 using System;
 using System.Drawing.Imaging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
@@ -33,7 +32,14 @@ namespace SeleniumUiTests
         public void CreateEmployee(string fullname, string department, string email, string phone, string address)
         {
             // Arrange
-            _browserDriver = new ChromeDriver();
+            
+	     ChromeOptions options = new ChromeOptions();
+	     options.AddArguments("headless"); // Run Chrome in headless mode
+	     IWebDriver driver = new ChromeDriver(options);
+	     FirefoxOptions options = new FirefoxOptions();
+	     options.AddArguments("-headless");  // Run Firefox in headless mode
+	     IWebDriver driver = new FirefoxDriver(options);
+	    _browserDriver = new ChromeDriver();
             _browserDriver.Manage().Window.Maximize();
             _browserDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             _browserDriver.Navigate().GoToUrl(_websiteURL + "Employees/Create");
